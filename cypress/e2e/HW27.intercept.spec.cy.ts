@@ -1,4 +1,4 @@
-describe('HW27 part 2', () => {
+describe('HW27 part 2 test intercept', () => {
   it('Check success message', () =>{
         cy.visit('https://pu5hds6usi.execute-api.us-east-1.amazonaws.com/mocks');
         cy.get('#fetchBtn').click();

@@ -1,4 +1,4 @@
-describe('HW27 part 1', () => {
+describe('HW27 part 1 test saucedemo', () => {
   beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
     cy.login('standard_user', 'secret_sauce');
