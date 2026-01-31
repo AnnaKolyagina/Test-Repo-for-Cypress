@@ -1,6 +1,7 @@
 version: 2.1
 
-
+orbs:
+  cypress: cypress-io/cypress@6
 
 jobs:
   cypress-tests:
