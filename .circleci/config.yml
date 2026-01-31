@@ -34,6 +34,10 @@ jobs:
           path: cypress/videos
           destination: videos
 
+      - store_test_results:
+        path: cypress/results
+        when: always    
+
 workflows:
   cypress-workflow:
     jobs:
