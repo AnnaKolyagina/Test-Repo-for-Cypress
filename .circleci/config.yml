@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  cypress: cypress-io/cypress@3
+
+jobs:
+  cypress-tests:
+    docker:
+      - image: cimg/node:20.10-browsers
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - npm-cache-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      - save_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+
+      - run:
+          name: Run Cypress tests
+          command: npx cypress run
+
+      - store_artifacts:
+          path: cypress/screenshots
+          destination: screenshots
+
+      - store_artifacts:
+          path: cypress/videos
+          destination: videos
+
+workflows:
+  cypress-workflow:
+    jobs:
+      - cypress-tests
