@@ -33,9 +33,6 @@ jobs:
       - store_artifacts:
           path: cypress/videos
           destination: videos
-
-      - store_test_results:
-        path: cypress/results
      
 
 workflows:
