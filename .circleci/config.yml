@@ -36,7 +36,7 @@ jobs:
 
       - store_test_results:
         path: cypress/results
-        when: always    
+     
 
 workflows:
   cypress-workflow:
